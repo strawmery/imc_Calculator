@@ -1,14 +1,17 @@
 package com.example.imccalculator;
 
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
 public class ImcCalculator {
     public String  calculateImc(int weight, double height) {
         double imc = weight / Math.pow(height, 2);
         if (imc < 16) {
             return  "Delgadez Severa";
         }else if(imc >= 16  && imc < 17){
-            return "Dalgadez Moderada";
+            return "Delgadez Moderada";
         }else if(imc >=17  && imc < 18.5){
-            return "Dalgadez Leve";
+            return "Delgadez Leve";
         }else if(imc >= 18.5  && imc < 25){
             return  "Peso Normal";
         }else if(imc  >= 25  && imc < 30){
@@ -22,5 +25,4 @@ public class ImcCalculator {
         }
         return null;
     }
-
 }
